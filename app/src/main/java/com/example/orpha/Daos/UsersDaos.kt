@@ -1,6 +1,5 @@
 package com.example.orpha.Daos
 
-import android.provider.Settings
 import com.example.orpha.models.Users
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentSnapshot
@@ -20,15 +19,11 @@ class UsersDaos {
                     user.uid?.let { it1 -> usersCollection.document(it1).set(it) }
                 }
             }
-
         }
-
     }
 
     fun getUserById(uid:String): Task<DocumentSnapshot> {
         return usersCollection.document(uid).get()
-
     }
-
 
 }

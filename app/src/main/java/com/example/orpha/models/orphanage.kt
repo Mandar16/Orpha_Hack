@@ -10,4 +10,3 @@ data class orphanage(
     val list_of_donors:ArrayList<Users>,
     val list_of_childrens:ArrayList<Children>
     )
-

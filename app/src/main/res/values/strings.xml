@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Orpha</string>
+    <string name="list_of_problems">List Of Problems</string>
+    <string name="no_of_children">No. Of Children</string>
+    <string name="list_of_co_founders">List of Co-founders</string>
+    <string name="funding_deficit">Funding Deficit</string>
+    <string name="orphanage_name">Name</string>
+    <string name="address">Address</string>
 </resources>
