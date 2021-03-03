@@ -32,13 +32,13 @@
                 android:hint="@string/orphanage_name"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/orphanage_name_edit_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
+                android:id="@+id/orphanage_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -47,11 +47,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:hint="@string/address"
-                android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:hintAnimationEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/mob_edit_text"
+                    android:id="@+id/address_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPostalAddress"
@@ -61,21 +61,22 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/list_of_problems"
-                    android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    app:hintAnimationEnabled="false"
                     android:id="@+id/list_of_problems_parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/add_list_of_problems">
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/list_of_problems"
+
+
+                    app:hintAnimationEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/list_of_problems"
@@ -85,17 +86,16 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <ImageButton
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:id="@+id/add_list_of_problems"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/list_of_problems_parent"
-                    android:src="@drawable/add_image_button"/>
+                <ImageView
+                    android:id="@+id/add_btn_listof_problems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_input_add"
+                    app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/list_of_problems_rv"
@@ -108,7 +108,7 @@
                 android:hint="@string/no_of_children"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/no_of_children_edit_text"
@@ -120,41 +120,48 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
+                    android:id="@+id/list_of_co_founders_parent"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:hint="@string/list_of_co_founders"
-                    android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
                     app:hintAnimationEnabled="false"
-                    android:id="@+id/list_of_co_founders_parent"
-                    app:layout_constraintTop_toTopOf="parent"
+
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/add_co_founder_imgBtn">
+                   app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/list_of_co_founders"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text" />
-
-
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <ImageButton
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:id="@+id/add_co_founder_imgBtn"
+
+                <ImageView
+                    android:id="@+id/add_btn_listof_cofounder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_input_add"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/list_of_co_founders_parent"
-                    android:src="@drawable/add_image_button"/>
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -168,7 +175,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:hint="@string/funding_deficit"
-                android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/funding_deficit_edit_text"
@@ -177,6 +184,78 @@
                     android:inputType="textCapWords" />
 
             </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enters Details of Your Children"
+                android:textSize="24sp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold|italic"
+                android:textColor="@color/colorPrimaryDark"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name of child"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name_of_children_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/age_of_children_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/child_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_launcher_foreground"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/add_image_button"
+                    android:layout_gravity="end"
+                    android:baselineAlignBottom="true"
+                    android:layout_marginLeft="100dp"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/child_details_rv"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/orphanage_sign_up_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sign Up"
+                app:cornerRadius="8dp" />
 
         </LinearLayout>
     </ScrollView>
