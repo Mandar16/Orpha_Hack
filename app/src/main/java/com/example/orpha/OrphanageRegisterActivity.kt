@@ -3,7 +3,10 @@ package com.example.orpha
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.orpha.Daos.OrphanageDaos
+import com.example.orpha.adapter.List_Of_Co_Founders_Adapter
+import com.example.orpha.adapter.List_Of_Problems_Adapter
 import com.example.orpha.databinding.ActivityOrphanageRegisterBinding
 import com.example.orpha.models.Children
 import com.example.orpha.models.Orphanage
@@ -56,10 +59,19 @@ class OrphanageRegisterActivity : AppCompatActivity() {
 
             orphanageDaos.addOrphanage(orphanage, user)
 
-
-
         }
 
+        binding.listOfProblemsRv.layoutManager = LinearLayoutManager(this)
+        val issuesAdapter:List_Of_Problems_Adapter = List_Of_Problems_Adapter(list_of_issues)
+        binding.listOfProblemsRv.adapter = issuesAdapter
+
+        binding.listOfCoFoundersRv.layoutManager = LinearLayoutManager(this)
+        val coFoundersAdapter:List_Of_Co_Founders_Adapter = List_Of_Co_Founders_Adapter(list_of_cofounders)
+        binding.listOfCoFoundersRv.adapter=coFoundersAdapter
+
+//        binding.listOfDonorsRv.layoutManager = LinearLayoutManager(this)
+//        val donorsAdapter:DonorsAdapter = DonorsAdapter()
+//        binding.listOfDonorsRv.adapter=DonorsAdapter
 
     }
 }
