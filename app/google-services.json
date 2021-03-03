@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "64741277221",
+    "project_id": "orpha-915b0",
+    "storage_bucket": "orpha-915b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64741277221:android:20cd893d10b671c381c9cc",
+        "android_client_info": {
+          "package_name": "com.example.orpha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64741277221-8p25dbgvn6455el29i41fbn9p9tqa0qm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXS-Bmz4_bmyrQZ1oEF1HlNTwPTe_hHio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64741277221-8p25dbgvn6455el29i41fbn9p9tqa0qm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
