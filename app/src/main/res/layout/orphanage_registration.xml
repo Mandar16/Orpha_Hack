@@ -17,7 +17,6 @@
             android:padding="16dp"
             android:orientation="vertical">
 
-
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -84,7 +83,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintLeft_toRightOf="@+id/list_of_problems_parent"
-                    android:src="@drawable/ic_launcher_add_foreground"/>
+                    android:src="@drawable/add_image_button"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -144,7 +143,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintLeft_toRightOf="@+id/list_of_co_founders_parent"
-                    android:src="@drawable/ic_launcher_add_foreground"/>
+                    android:src="@drawable/add_image_button"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
