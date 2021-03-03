@@ -16,6 +16,15 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text ="Fill The Detais of Your Orphanage"
+                android:textSize="24sp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold|italic"
+                android:textColor="@color/colorPrimaryDark"
+                />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -87,11 +96,11 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:id="@+id/list_of_problems_rv" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_of_problems_rv"
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -149,7 +158,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="120dp"
                 android:id="@+id/list_of_co_founders_rv" />
 
 
@@ -161,11 +170,11 @@
                 android:hint="@string/funding_deficit"
                 android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/funding_deficit_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textCapWords" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/funding_deficit_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
