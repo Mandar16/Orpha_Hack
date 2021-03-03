@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.orpha.Daos.UsersDaos
 import com.example.orpha.databinding.ActivityLoginBinding
+import com.example.orpha.models.Users
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -24,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
     private val firebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
+   private val usermode  =  Users()
 
    private val RC_SIGN_IN =1234
 
@@ -115,9 +118,17 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun updateUI(user: FirebaseUser?) {
+    private fun updateUI(firebaseUser: FirebaseUser?) {
 
-        if(user != null){
+        if(firebaseUser != null){
+         val user =   Users(
+                firebaseUser.displayName,
+                firebaseUser.uid,
+                firebaseUser.photoUrl.toString()
+            )
+
+            val userDaos = UsersDaos()
+            userDaos.addUser(user)
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
             finish()

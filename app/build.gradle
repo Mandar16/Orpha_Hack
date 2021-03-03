@@ -53,4 +53,8 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:7.1.1'
 
     implementation 'com.android.support:multidex:1.0.3'
+
+    //coroutines dependency
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
 }
