@@ -10,6 +10,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.orpha.Daos.OrphanageDaos
+import com.example.orpha.adapter.ChildrenAdapter
 import com.example.orpha.adapter.CoFounderAdapter
 import com.example.orpha.adapter.DonorsAdapter
 import com.example.orpha.adapter.IssuesAdapter
@@ -23,9 +24,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 
+
 class OrphanageRegisterActivity : AppCompatActivity() {
     private lateinit var binding:ActivityOrphanageRegisterBinding
-   lateinit var  Issueadapter : IssuesAdapter
+
+   lateinit var  issueadapter : IssuesAdapter
    lateinit var  coFoundersadapter :CoFounderAdapter
    lateinit var donorsadapter :DonorsAdapter
    private val RC_FOR_IMG = 1234
@@ -74,8 +77,8 @@ class OrphanageRegisterActivity : AppCompatActivity() {
 
 
         //seting up Issues Adapter
-        Issueadapter = IssuesAdapter(list_of_issues)
-        binding.listOfProblemsRv.adapter = Issueadapter
+        issueadapter = IssuesAdapter(list_of_issues)
+        binding.listOfProblemsRv.adapter = issueadapter
         binding.listOfProblemsRv.layoutManager = LinearLayoutManager(this)
 
         //SettingUp CoFoundersAdapter
@@ -105,6 +108,10 @@ class OrphanageRegisterActivity : AppCompatActivity() {
 
         }
 
+        //SettingUp Children detailsAdapter
+        binding.childDetailsRv.layoutManager = LinearLayoutManager(this)
+        val childrenAdapter: ChildrenAdapter = ChildrenAdapter(list_of_childrens)
+        binding.childDetailsRv.adapter=childrenAdapter
 
 
         binding.orphanageSignUpBtn.setOnClickListener {
@@ -124,15 +131,15 @@ class OrphanageRegisterActivity : AppCompatActivity() {
             )
 
             val user = FirebaseAuth.getInstance().currentUser
-
             val orphanageDaos = OrphanageDaos()
-
             orphanageDaos.addOrphanage(orphanage, user)
-
-
 
         }
 
+
+//        binding.listOfDonorsRv.layoutManager = LinearLayoutManager(this)
+//        val donorsAdapter:DonorsAdapter = DonorsAdapter()
+//        binding.listOfDonorsRv.adapter=DonorsAdapter
 
     }
 
@@ -201,7 +208,5 @@ class OrphanageRegisterActivity : AppCompatActivity() {
 
         }
     }
-
-
 
 }

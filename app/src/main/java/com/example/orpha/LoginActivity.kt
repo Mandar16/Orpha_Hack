@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 
 class LoginActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginBinding
     lateinit var gso : GoogleSignInOptions
     private lateinit var googleSignInClient : GoogleSignInClient
@@ -34,7 +35,6 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
 
 
         // Configure Google Sign In
@@ -131,7 +131,7 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
             finish()
-            Toast.makeText(this,"Sucessfullsignin",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Successful signin",Toast.LENGTH_SHORT).show()
 
         }
 
