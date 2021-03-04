@@ -230,11 +230,12 @@
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/child_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
                     android:src="@drawable/ic_launcher_foreground"/>
 
                 <ImageView
+                    android:id="@+id/child_add_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/add_image_button"
