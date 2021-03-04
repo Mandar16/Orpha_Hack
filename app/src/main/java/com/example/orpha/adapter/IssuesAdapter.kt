@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.orpha.R
 
-class List_Of_Problems_Adapter(val items:ArrayList<String>): RecyclerView.Adapter<List_Of_Problems_ViewHolder>() {
+class IssuesAdapter(val items:ArrayList<String>): RecyclerView.Adapter<List_Of_Problems_ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): List_Of_Problems_ViewHolder {
 
         val view = LayoutInflater.from(parent.context).inflate(android.R.layout.simple_list_item_1,parent,false)

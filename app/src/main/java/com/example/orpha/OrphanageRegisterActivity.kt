@@ -5,8 +5,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.orpha.Daos.OrphanageDaos
-import com.example.orpha.adapter.List_Of_Co_Founders_Adapter
-import com.example.orpha.adapter.List_Of_Problems_Adapter
+import com.example.orpha.adapter.CoFounderAdapter
+import com.example.orpha.adapter.DonorsAdapter
+import com.example.orpha.adapter.IssuesAdapter
 import com.example.orpha.databinding.ActivityOrphanageRegisterBinding
 import com.example.orpha.models.Children
 import com.example.orpha.models.Orphanage
@@ -15,6 +16,10 @@ import com.google.firebase.auth.FirebaseAuth
 
 class OrphanageRegisterActivity : AppCompatActivity() {
     private lateinit var binding:ActivityOrphanageRegisterBinding
+   lateinit var  Issueadapter : IssuesAdapter
+   lateinit var  coFoundersadapter :CoFounderAdapter
+   lateinit var donorsadapter :DonorsAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +36,7 @@ class OrphanageRegisterActivity : AppCompatActivity() {
             list_of_issues.add(binding.listOfProblems.text.toString())
             binding.listOfProblems.setText("")
             Toast.makeText(this, binding.listOfProblems.text.toString(), Toast.LENGTH_LONG).show()
-            Toast.makeText(this, list_of_issues?.size.toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, list_of_issues.size.toString(), Toast.LENGTH_LONG).show()
 
         }
 
@@ -39,8 +44,21 @@ class OrphanageRegisterActivity : AppCompatActivity() {
             list_of_cofounders.add(binding.listOfCoFounders.text.toString())
             binding.listOfCoFounders.setText("")
         }
-        binding.orphanageSignUpBtn.setOnClickListener {
 
+
+        //seting up Issues Adapter
+        Issueadapter = IssuesAdapter(list_of_issues)
+        binding.listOfProblemsRv.adapter = Issueadapter
+        binding.listOfProblemsRv.layoutManager = LinearLayoutManager(this)
+
+        //SettingUp CoFoundersAdapter
+        coFoundersadapter = CoFounderAdapter(list_of_cofounders)
+        binding.listOfCoFoundersRv.adapter = coFoundersadapter
+        binding.listOfCoFoundersRv.layoutManager = LinearLayoutManager(this)
+
+
+
+        binding.orphanageSignUpBtn.setOnClickListener {
 
             val orphanage = Orphanage(
                 binding.orphanageNameEditText.text.toString(),
@@ -59,19 +77,10 @@ class OrphanageRegisterActivity : AppCompatActivity() {
 
             orphanageDaos.addOrphanage(orphanage, user)
 
+
+
         }
 
-        binding.listOfProblemsRv.layoutManager = LinearLayoutManager(this)
-        val issuesAdapter:List_Of_Problems_Adapter = List_Of_Problems_Adapter(list_of_issues)
-        binding.listOfProblemsRv.adapter = issuesAdapter
-
-        binding.listOfCoFoundersRv.layoutManager = LinearLayoutManager(this)
-        val coFoundersAdapter:List_Of_Co_Founders_Adapter = List_Of_Co_Founders_Adapter(list_of_cofounders)
-        binding.listOfCoFoundersRv.adapter=coFoundersAdapter
-
-//        binding.listOfDonorsRv.layoutManager = LinearLayoutManager(this)
-//        val donorsAdapter:DonorsAdapter = DonorsAdapter()
-//        binding.listOfDonorsRv.adapter=DonorsAdapter
 
     }
 }
