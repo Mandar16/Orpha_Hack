@@ -16,7 +16,7 @@ class OrphanageAdapter(options: FirestoreRecyclerOptions<Orphanage>) : Firestore
 
     class OrphanageAdapterViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val orphanageName: TextView = itemView.findViewById<TextView>(R.id.orphanageName)
-        val numberOfChildrens: TextView = itemView.findViewById<TextView>(R.id.numberOfChildren)
+        val numberOfChildren: TextView = itemView.findViewById<TextView>(R.id.numberOfChildren)
         val fundingRequired: TextView = itemView.findViewById<TextView>(R.id.fundingRequired)
 
     }
@@ -35,8 +35,7 @@ class OrphanageAdapter(options: FirestoreRecyclerOptions<Orphanage>) : Firestore
         model: Orphanage
     ) {
         holder.orphanageName.text = model.name
-        holder.numberOfChildrens.text = model.no_of_children.toString()
+        holder.numberOfChildren.text = model.no_of_children.toString()
         holder.fundingRequired.text = model.funding_deficit.toString()
-
     }
 }

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context=".OrphanageDetailsActivity">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/orphaNametv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="35dp"
+                android:background="#81D4FA"
+                android:fontFamily="@font/acme"
+                android:gravity="center_horizontal"
+                android:hint="Orphanage Name"
+                android:padding="4dp"
+                android:textColor="#1565C0"
+                android:textSize="30sp" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/noOfOrphansTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/acme"
+                android:hint="No. of orphans"
+                android:padding="4dp"
+                android:textColor="#1565C0"
+                android:textSize="25sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/orphaAddressTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/acme"
+                android:hint="Address"
+                android:padding="4dp"
+                android:textColor="#1565C0"
+                android:textSize="25sp" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/listOfPrbTv"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="#81D4FA"
+                android:fontFamily="@font/acme"
+                android:padding="4dp"
+                android:text="@string/list_of_problems"
+                android:textColor="#1565C0"
+                android:textSize="25sp"
+                app:hintAnimationEnabled="false">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listOfProblemsRv"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginBottom="5dp"
+                android:padding="8dp" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+
+                android:id="@+id/listOfCofoundersTv"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="#81D4FA"
+                android:fontFamily="@font/acme"
+                android:padding="8dp"
+                android:text="@string/list_of_co_founders"
+                android:textColor="#1565C0"
+                android:textSize="25sp"
+                app:hintAnimationEnabled="false">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listOfCoFoundersRv"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginBottom="5dp"
+                android:padding="8dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="#81D4FA"
+                android:padding="4dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/listOfOrphansTv"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:text="List Of Orphans"
+                    android:textColor="#1565C0"
+                    android:textSize="25sp"
+                    app:hintAnimationEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <ImageView
+                    android:id="@+id/showListOfOrphansBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/see_details_btn"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+
+                android:id="@+id/listOfDonorsTv"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="#81D4FA"
+                android:fontFamily="@font/acme"
+                android:padding="8dp"
+                android:text="List Of Donors"
+                android:textColor="#1565C0"
+                android:textSize="25sp"
+                app:hintAnimationEnabled="false">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/fundingDeficitTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="35dp"
+                android:fontFamily="@font/acme"
+                android:hint="Funding Deficit"
+                android:padding="4dp"
+                android:textSize="25sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/payNowBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="4dp"
+                android:text="Pay Now"
+                app:cornerRadius="20dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/orphaContactTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/acme"
+                    android:hint="Contact no."
+                    android:textColor="#f44336"
+                    android:textSize="25sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/orphaEmailTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/acme"
+                    android:hint="Email"
+                    android:textColor="#f44336"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Orpha">
-        <activity android:name=".OrphanageDiaplayActivity"></activity>
+        <activity android:name=".DonorsListRv"></activity>
+        <activity android:name=".OrphanageDetailsActivity" />
+        <activity android:name=".OrphanageDiaplayActivity" />
         <activity android:name=".OrphanageRegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SplashActivity">
@@ -23,6 +25,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

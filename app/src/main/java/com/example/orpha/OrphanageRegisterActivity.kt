@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.orpha.Daos.OrphanageDaos
 import com.example.orpha.adapter.ChildrenAdapter
 import com.example.orpha.adapter.CoFounderAdapter
-import com.example.orpha.adapter.DonorsAdapter
 import com.example.orpha.adapter.IssuesAdapter
 import com.example.orpha.databinding.ActivityOrphanageRegisterBinding
 import com.example.orpha.models.Children
@@ -101,7 +100,6 @@ class OrphanageRegisterActivity : AppCompatActivity() {
             Toast.makeText(this,"AFTER ClickChildBTN ->"+childImageUrl,Toast.LENGTH_SHORT).show()
 
 
-
             binding.nameOfChildrenEditText.setText("")
             binding.ageOfChildrenEditText.setText("")
             binding.childImage.setImageResource(R.drawable.ic_launcher_foreground)
@@ -141,9 +139,6 @@ class OrphanageRegisterActivity : AppCompatActivity() {
         }
 
 
-//        binding.listOfDonorsRv.layoutManager = LinearLayoutManager(this)
-//        val donorsAdapter:DonorsAdapter = DonorsAdapter()
-//        binding.listOfDonorsRv.adapter=DonorsAdapter
 
     }
 
@@ -211,6 +206,7 @@ class OrphanageRegisterActivity : AppCompatActivity() {
         }.addOnFailureListener {
 
         }
+
     }
 
 }
