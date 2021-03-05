@@ -30,7 +30,7 @@ class OrphanageRegisterActivity : AppCompatActivity() {
 
    lateinit var  issueadapter : IssuesAdapter
    lateinit var  coFoundersadapter :CoFounderAdapter
-   lateinit var donorsadapter :DonorsAdapter
+   //lateinit var donorsadapter :DonorsAdapter
    private val RC_FOR_IMG = 1234
 
     val storage by lazy {
@@ -45,7 +45,7 @@ class OrphanageRegisterActivity : AppCompatActivity() {
    var ageOFChild:Int = 0
 
 
-  var children: Children = Children()
+   var children: Children = Children()
 
     val list_of_issues : ArrayList<String> = ArrayList()
     val list_of_cofounders : ArrayList<String> = ArrayList()
@@ -98,7 +98,7 @@ class OrphanageRegisterActivity : AppCompatActivity() {
                 binding.ageOfChildrenEditText.text.toString().toInt(),
 
                      )
-            Toast.makeText(this,"AFTER ClickChildBTN ->"+childImageUrl,Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"AFTER ClickChildBTN ->"+childImageUrl,Toast.LENGTH_SHORT).show()
 
 
 
@@ -110,18 +110,17 @@ class OrphanageRegisterActivity : AppCompatActivity() {
 
         //SettingUp Children detailsAdapter
         binding.childDetailsRv.layoutManager = LinearLayoutManager(this)
-        val childrenAdapter: ChildrenAdapter = ChildrenAdapter(list_of_childrens)
+        val childrenAdapter= ChildrenAdapter(list_of_childrens)
         binding.childDetailsRv.adapter=childrenAdapter
 
 
         binding.orphanageSignUpBtn.setOnClickListener {
-
-
-
-
             val orphanage = Orphanage(
                 binding.orphanageNameEditText.text.toString(),
                 binding.addressEditText.text.toString(),
+                binding.contactNoEditText.text.toString(),
+                binding.emailEditText.text.toString(),
+                binding.upiIdEdtText.text.toString(),
                 list_of_issues,
                 binding.noOfChildrenEditText.text.toString().toInt(),
                 list_of_cofounders,
@@ -133,6 +132,11 @@ class OrphanageRegisterActivity : AppCompatActivity() {
             val user = FirebaseAuth.getInstance().currentUser
             val orphanageDaos = OrphanageDaos()
             orphanageDaos.addOrphanage(orphanage, user)
+
+            Toast.makeText(this,"SignUp successfully" , Toast.LENGTH_SHORT).show()
+            intent = Intent(this,OrphanageDiaplayActivity::class.java)
+            startActivity(intent)
+            finish()
 
         }
 

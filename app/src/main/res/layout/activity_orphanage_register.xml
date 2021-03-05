@@ -93,6 +93,23 @@
                     android:layout_marginBottom="10dp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="UPI Id"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:hintAnimationEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/upi_id_edt_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">

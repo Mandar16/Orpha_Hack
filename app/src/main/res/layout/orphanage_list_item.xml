@@ -14,14 +14,13 @@
 
         <TextView
             android:id="@+id/orphanageName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:ellipsize="end"
             android:gravity="start"
-            android:lines="1"
-            android:padding="4dp"
             android:hint="Orphanage Name"
+            android:lines="1"
+            android:padding="8dp"
             android:textAlignment="viewStart"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -36,27 +35,20 @@
             android:id="@+id/numberOfChildren"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:hint="Total no. of children"
-            android:layout_margin="5dp"
             android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="@+id/orphanageName"
-            app:layout_constraintStart_toStartOf="@+id/orphanageName"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/orphanageName" />
 
         <TextView
             android:id="@+id/fundingRequired"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:hint="Funding Required"
             android:textStyle="italic"
-            android:layout_margin="5dp"
-            app:layout_constraintHorizontal_bias="0.674"
             app:layout_constraintLeft_toRightOf="@+id/numberOfChildren"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/numberOfChildren"
-            app:layout_constraintBottom_toBottomOf="@+id/numberOfChildren"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@id/orphanageName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

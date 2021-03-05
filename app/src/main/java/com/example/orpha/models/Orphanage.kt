@@ -1,8 +1,11 @@
 package com.example.orpha.models
 
 data class Orphanage(
-    val name:String ="",
+    var name:String ="",
     val address:String = "",
+    val phoneNumber :String ="",
+    val email:String ="",
+    val upiid:String ="",
     val issues: ArrayList<String>? =null,
     val no_of_children:Int =0,
     val founders:ArrayList<String>? =null,
