@@ -4,27 +4,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="2dp">
+    android:layout_height="180dp"
+    android:layout_marginBottom="5dp"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/selectableItemBackground">
+        android:layout_height="180dp"
+        android:background="@drawable/orphanage_list_item_bg">
 
         <TextView
             android:id="@+id/orphanageName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:gravity="start"
+            android:gravity="center_horizontal"
             android:hint="Orphanage Name"
             android:lines="1"
             android:padding="8dp"
-            android:textAlignment="viewStart"
+            android:foregroundGravity="center_horizontal"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="36sp"
             android:textStyle="bold"
+            android:fontFamily="@font/acme"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -35,8 +37,14 @@
             android:id="@+id/numberOfChildren"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:gravity="center_horizontal"
             android:hint="Total no. of children"
+            android:textAlignment="center"
+            android:textColor="@color/black"
             android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/orphanageName" />
 
@@ -44,11 +52,14 @@
             android:id="@+id/fundingRequired"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:hint="Funding Required"
+            android:textColor="@color/black"
             android:textStyle="italic"
-            app:layout_constraintLeft_toRightOf="@+id/numberOfChildren"
-            app:layout_constraintTop_toBottomOf="@id/orphanageName" />
+            android:textSize="16sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

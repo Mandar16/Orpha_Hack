@@ -4,27 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ccff90"
-    tools:context=".OrphanageDisplayActivity">
-
-    <include
-    android:id="@+id/common_toolbar"
-    layout="@layout/common_toolbar"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".OrphanageDisplayActivity"
+    android:backgroundTint="#ccff90">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/orphanage_display_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ccff90"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="#ccff90"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

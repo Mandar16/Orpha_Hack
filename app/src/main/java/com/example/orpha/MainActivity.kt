@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.continueBtn.setOnClickListener {
-            val intent = Intent(this,OrphanageDiaplayActivity::class.java)
+            val intent = Intent(this,OrphanageDisplayActivity::class.java)
             startActivity(intent)
             finish()
         }

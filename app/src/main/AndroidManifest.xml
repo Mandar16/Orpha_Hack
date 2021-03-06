@@ -14,7 +14,8 @@
         android:theme="@style/Theme.Orpha">
         <activity android:name=".DonorsListRv"></activity>
         <activity android:name=".OrphanageDetailsActivity" />
-        <activity android:name=".OrphanageDiaplayActivity" />
+        <activity android:name=".OrphanageDisplayActivity" />
+        <activity android:name=".DonationActivity"></activity>
         <activity android:name=".OrphanageRegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SplashActivity">

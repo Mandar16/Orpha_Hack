@@ -132,7 +132,7 @@ class OrphanageRegisterActivity : AppCompatActivity() {
             orphanageDaos.addOrphanage(orphanage, user)
 
             Toast.makeText(this,"SignUp successfully" , Toast.LENGTH_SHORT).show()
-            intent = Intent(this,OrphanageDiaplayActivity::class.java)
+            intent = Intent(this,OrphanageDisplayActivity::class.java)
             startActivity(intent)
             finish()
 

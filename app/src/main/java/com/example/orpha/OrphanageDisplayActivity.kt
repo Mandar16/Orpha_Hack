@@ -1,17 +1,27 @@
 package com.example.orpha
 
+import android.R
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.Menu
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.orpha.Daos.OrphanageDaos
+import com.example.orpha.adapter.IPostAdapter
 import com.example.orpha.adapter.OrphanageAdapter
 import com.example.orpha.databinding.ActivityOrphanageDiaplayBinding
 import com.example.orpha.models.Orphanage
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 
-class OrphanageDiaplayActivity : AppCompatActivity() {
+
+class OrphanageDisplayActivity : AppCompatActivity(), IPostAdapter {
     lateinit var  Orphadapter:OrphanageAdapter
-    private lateinit var binding: ActivityOrphanageDiaplayBinding
+
+    private var mTopToolbar: Toolbar? = null
+    private lateinit var binding:ActivityOrphanageDiaplayBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOrphanageDiaplayBinding.inflate(layoutInflater)
@@ -19,8 +29,19 @@ class OrphanageDiaplayActivity : AppCompatActivity() {
         setContentView(view)
 
         setupRecyclerView()
+        
+
+
 
     }
+   // setting menu in action bar
+
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.my_menu,menu)
+//        return super.onCreateOptionsMenu(menu)
+//    }
+
+
 
     private fun setupRecyclerView() {
         val orphanageDaos = OrphanageDaos()
@@ -31,14 +52,13 @@ class OrphanageDiaplayActivity : AppCompatActivity() {
         val recyclerViewOptions = FirestoreRecyclerOptions
                                 .Builder<Orphanage>()
                                 .setQuery(query, Orphanage::class.java).build()
-        Orphadapter = OrphanageAdapter(recyclerViewOptions)
+        Orphadapter = OrphanageAdapter(recyclerViewOptions, this)
 
         binding.orphanageDisplayRv.adapter = Orphadapter
         binding.orphanageDisplayRv.layoutManager = LinearLayoutManager(this)
-        //post_recycler_view.layoutManager = LinearLayoutManager(this)
-
 
     }
+
 
     override fun onStart() {
         super.onStart()
@@ -47,8 +67,14 @@ class OrphanageDiaplayActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        if (Orphadapter != null) {
-            Orphadapter.stopListening()
-        }
+        Orphadapter.stopListening()
+    }
+
+    override fun onLikeClicked(id: String) {
+       //Toast.makeText(this,"documentId->"+id,Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this, OrphanageDetailsActivity::class.java).putExtra("documentId", id)
+        startActivity(intent)
+
     }
 }

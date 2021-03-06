@@ -170,12 +170,12 @@
                 android:textSize="25sp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/payNowBtn"
+                android:id="@+id/donateNowBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="4dp"
-                android:text="Pay Now"
+                android:text="Donate"
                 app:cornerRadius="20dp" />
 
 
@@ -184,26 +184,52 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/orphaContactTv"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp"
-                    android:fontFamily="@font/acme"
-                    android:hint="Contact no."
-                    android:textColor="#f44336"
-                    android:textSize="25sp" />
+                    android:orientation="horizontal">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/orphaEmailTv"
-                    android:layout_width="match_parent"
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:fontFamily="@font/acme"
+                        android:hint="Contact no."
+                        android:textColor="#f44336"
+                        android:textSize="25sp" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/orphaContactTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="9999999999"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp"
-                    android:fontFamily="@font/acme"
-                    android:hint="Email"
-                    android:textColor="#f44336"
-                    android:textSize="25sp" />
+                    android:orientation="horizontal">
+                    <com.google.android.material.textview.MaterialTextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:fontFamily="@font/acme"
+                        android:hint="Email"
+                        android:textColor="#f44336"
+                        android:textSize="25sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                       android:textColor="@color/colorPrimaryDark"
+                        android:id="@+id/orphaEmailTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="manxxxx@gmail.com"
+                        android:layout_marginStart="8dp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
