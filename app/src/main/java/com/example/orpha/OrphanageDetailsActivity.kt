@@ -1,4 +1,4 @@
-package com.example.orpha
+ package com.example.orpha
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -30,9 +30,6 @@ class OrphanageDetailsActivity : AppCompatActivity() {
         Toast.makeText(this,"DocumentID =>" + documentId,Toast.LENGTH_SHORT).show()
 
 
-
-
-
        val orphanageDaos = OrphanageDaos()
         if (documentId != null) {
             orphanageDaos.getOrphanage(documentId).addOnSuccessListener {
@@ -41,21 +38,21 @@ class OrphanageDetailsActivity : AppCompatActivity() {
                 Toast.makeText(this,"Orphanage Name = > "+orphanage.name,Toast.LENGTH_SHORT).show()
 
                 binding.orphaNametv.text = orphanage.name
-                binding.noOfOrphansTv.text = "Number Of Childrens"+orphanage.no_of_children.toString()
-                binding.orphaAddressTv.text = "Address" + orphanage.address
+                binding.noOfOrphansTv.text = "Number Of Children : "+orphanage.no_of_children.toString()
+                binding.orphaAddressTv.text = "Address : " + orphanage.address
 
                 //Setting up List of Problems RecyclerView
                 issueadapter = orphanage.issues?.let { IssuesAdapter(it) }!!
                 binding.listOfProblemsRv.adapter = issueadapter
                 binding.listOfProblemsRv.layoutManager = LinearLayoutManager(this)
 
-                //Setting up List of Cofounders
+                //Setting up List of Co-founders
                 coFoundersadapter = orphanage.founders?.let { CoFounderAdapter(it) }!!
                 binding.listOfCoFoundersRv.adapter = coFoundersadapter
                 binding.listOfCoFoundersRv.layoutManager = LinearLayoutManager(this)
 
 
-                binding.fundingDeficitTv.text = "Funding Required"+orphanage.funding_deficit.toString()
+                binding.fundingDeficitTv.text = "Funding Required : "+orphanage.funding_deficit.toString()
                 binding.orphaContactTv.text = orphanage.phoneNumber.toString()
                 binding.orphaEmailTv.text = orphanage.email
 

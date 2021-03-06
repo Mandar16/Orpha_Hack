@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Orpha">
-        <activity android:name=".DonorsListRv"></activity>
+        <activity android:name=".OrphansDisplayActivity"></activity>
+        <activity android:name=".DonorsListRv" />
         <activity android:name=".OrphanageDetailsActivity" />
         <activity android:name=".OrphanageDisplayActivity" />
         <activity android:name=".DonationActivity"></activity>
