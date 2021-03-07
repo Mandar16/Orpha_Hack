@@ -1,5 +1,6 @@
 package com.example.orpha.adapter
 
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,9 +25,14 @@ class ChildrenAdapter(val items:ArrayList<Children>):RecyclerView.Adapter<Childr
         val age = items[position].age.toString()
         val childImageUrl = items[position].childImageUrl
 
+
         holder.childName.text = name
         holder.childAge.text = age
         Glide.with(holder.childImage.context).load(childImageUrl).circleCrop().into(holder.childImage);
+
+        holder.childDeletevbtn.setOnClickListener {
+            items.removeAt(position)
+        }
 
     }
 
@@ -40,4 +46,5 @@ class ChildrenViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
     val childName: TextView = itemView.findViewById(R.id.childName)
     val childAge: TextView = itemView.findViewById(R.id.childAge)
     val childImage: ImageView = itemView.findViewById(R.id.childImage)
+    val childDeletevbtn:ImageView = itemView.findViewById(R.id.child_delete)
 }

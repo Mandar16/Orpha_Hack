@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -73,5 +74,19 @@ class OrphanageDisplayActivity : AppCompatActivity(), IPostAdapter {
         intent= Intent(this,MainActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(com.example.orpha.R.menu.backbtn, menu);
+        return super.onCreateOptionsMenu(menu)
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        intent = Intent(this,MainActivity::class.java)
+        startActivity(intent)
+        finish()
+
+        return super.onOptionsItemSelected(item)
     }
 }

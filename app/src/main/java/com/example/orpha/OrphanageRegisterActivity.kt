@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -112,6 +113,9 @@ class OrphanageRegisterActivity : AppCompatActivity() {
             binding.childDetailsRv.adapter=childrenAdapter
 
         }
+
+
+
 
 
 

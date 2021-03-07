@@ -3,6 +3,8 @@
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.orpha.Daos.OrphanageDaos
@@ -96,5 +98,18 @@ class OrphanageDetailsActivity : AppCompatActivity() {
         intent = Intent(this,OrphanageDisplayActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(com.example.orpha.R.menu.backbtn, menu);
+        return super.onCreateOptionsMenu(menu)
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        intent = Intent(this,OrphanageDisplayActivity::class.java)
+        startActivity(intent)
+        finish()
+        return super.onOptionsItemSelected(item)
     }
 }

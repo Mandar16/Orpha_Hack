@@ -1,7 +1,10 @@
 package com.example.orpha
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.orpha.Daos.OrphanageDaos
 import com.example.orpha.adapter.ChildrenAdapter
@@ -50,5 +53,18 @@ class OrphansDisplayActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(com.example.orpha.R.menu.backbtn, menu);
+        return super.onCreateOptionsMenu(menu)
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        intent = Intent(this,OrphanageDetailsActivity::class.java)
+        startActivity(intent)
+        finish()
+        return super.onOptionsItemSelected(item)
     }
 }

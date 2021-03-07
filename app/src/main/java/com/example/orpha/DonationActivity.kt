@@ -10,6 +10,8 @@ import android.widget.Toast
 import com.example.orpha.databinding.ActivityDonationBinding
 import android.content.Context
 import android.net.ConnectivityManager
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 
@@ -169,5 +171,18 @@ class DonationActivity : AppCompatActivity() {
             }
             return false
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(com.example.orpha.R.menu.backbtn, menu);
+        return super.onCreateOptionsMenu(menu)
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        intent = Intent(this, OrphanageDetailsActivity::class.java)
+        startActivity(intent)
+        finish()
+        return super.onOptionsItemSelected(item)
     }
 }
