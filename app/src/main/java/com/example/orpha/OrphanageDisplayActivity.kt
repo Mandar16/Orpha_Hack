@@ -31,17 +31,7 @@ class OrphanageDisplayActivity : AppCompatActivity(), IPostAdapter {
         setupRecyclerView()
         
 
-
-
     }
-   // setting menu in action bar
-
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.my_menu,menu)
-//        return super.onCreateOptionsMenu(menu)
-//    }
-
-
 
     private fun setupRecyclerView() {
         val orphanageDaos = OrphanageDaos()
@@ -76,5 +66,12 @@ class OrphanageDisplayActivity : AppCompatActivity(), IPostAdapter {
         val intent = Intent(this, OrphanageDetailsActivity::class.java).putExtra("documentId", id)
         startActivity(intent)
 
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        intent= Intent(this,MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

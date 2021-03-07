@@ -64,6 +64,10 @@ class OrphanageRegisterActivity : AppCompatActivity() {
 
             list_of_issues.add(binding.listOfProblems.text.toString())
             binding.listOfProblems.setText("")
+            //seting up Issues Adapter
+            issueadapter = IssuesAdapter(list_of_issues)
+            binding.listOfProblemsRv.adapter = issueadapter
+            binding.listOfProblemsRv.layoutManager = LinearLayoutManager(this)
             Toast.makeText(this, binding.listOfProblems.text.toString(), Toast.LENGTH_LONG).show()
             Toast.makeText(this, list_of_issues.size.toString(), Toast.LENGTH_LONG).show()
 
@@ -72,18 +76,16 @@ class OrphanageRegisterActivity : AppCompatActivity() {
         binding.addBtnListofCofounder.setOnClickListener {
             list_of_cofounders.add(binding.listOfCoFounders.text.toString())
             binding.listOfCoFounders.setText("")
+            //SettingUp CoFoundersAdapter
+            coFoundersadapter = CoFounderAdapter(list_of_cofounders)
+            binding.listOfCoFoundersRv.adapter = coFoundersadapter
+            binding.listOfCoFoundersRv.layoutManager = LinearLayoutManager(this)
+
         }
 
 
-        //seting up Issues Adapter
-        issueadapter = IssuesAdapter(list_of_issues)
-        binding.listOfProblemsRv.adapter = issueadapter
-        binding.listOfProblemsRv.layoutManager = LinearLayoutManager(this)
 
-        //SettingUp CoFoundersAdapter
-        coFoundersadapter = CoFounderAdapter(list_of_cofounders)
-        binding.listOfCoFoundersRv.adapter = coFoundersadapter
-        binding.listOfCoFoundersRv.layoutManager = LinearLayoutManager(this)
+
 
         binding.childImage.setOnClickListener {
             checkforpermission()
@@ -104,12 +106,14 @@ class OrphanageRegisterActivity : AppCompatActivity() {
             binding.ageOfChildrenEditText.setText("")
             binding.childImage.setImageResource(R.drawable.ic_launcher_foreground)
 
+            //SettingUp Children detailsAdapter
+            binding.childDetailsRv.layoutManager = LinearLayoutManager(this)
+            val childrenAdapter= ChildrenAdapter(list_of_childrens)
+            binding.childDetailsRv.adapter=childrenAdapter
+
         }
 
-        //SettingUp Children detailsAdapter
-        binding.childDetailsRv.layoutManager = LinearLayoutManager(this)
-        val childrenAdapter= ChildrenAdapter(list_of_childrens)
-        binding.childDetailsRv.adapter=childrenAdapter
+
 
 
         binding.orphanageSignUpBtn.setOnClickListener {
@@ -132,7 +136,7 @@ class OrphanageRegisterActivity : AppCompatActivity() {
             orphanageDaos.addOrphanage(orphanage, user)
 
             Toast.makeText(this,"SignUp successfully" , Toast.LENGTH_SHORT).show()
-            intent = Intent(this,OrphanageDisplayActivity::class.java)
+            intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
             finish()
 
@@ -207,6 +211,13 @@ class OrphanageRegisterActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        intent = Intent(this,MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
 }

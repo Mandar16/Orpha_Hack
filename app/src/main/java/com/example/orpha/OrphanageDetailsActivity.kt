@@ -52,21 +52,26 @@ class OrphanageDetailsActivity : AppCompatActivity() {
                 binding.listOfCoFoundersRv.layoutManager = LinearLayoutManager(this)
 
 
-                binding.fundingDeficitTv.text = "Funding Required : "+orphanage.funding_deficit.toString()
+                binding.fundingDeficitTv.text = "Funding Required : "+orphanage.funding_deficit.toString() + " Rs."
                 binding.orphaContactTv.text = orphanage.phoneNumber.toString()
                 binding.orphaEmailTv.text = orphanage.email
 
-                binding.listOfOrphansTv.setOnClickListener {
 
+                binding.listOfOrphansTv.setOnClickListener {
+                    intent =Intent(this, OrphansDisplayActivity::class.java).putExtra("documentId",documentId)
+                    startActivity(intent)
+                }
+
+                binding.listOfDonorsTv.setOnClickListener {
+                    intent = Intent(this,DonorsListRv::class.java).putExtra("documentId",documentId)
+                    startActivity(intent)
                 }
 
 
 
 
 
-
-
-
+                //Donate Button
                 binding.donateNowBtn.setOnClickListener {
                     val intent = Intent(this,DonationActivity::class.java)
                     intent.putExtra("UPI_ID",orphanage.upiid)
@@ -82,5 +87,14 @@ class OrphanageDetailsActivity : AppCompatActivity() {
 
 
 
+
+
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        intent = Intent(this,OrphanageDisplayActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

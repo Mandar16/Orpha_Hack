@@ -5,9 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.orpha.models.Users
 import java.util.ArrayList
 
-class DonorsAdapter(val items:ArrayList<String>):RecyclerView.Adapter<DonorsViewHolder>() {
+class DonorsAdapter(val items:ArrayList<Users>):RecyclerView.Adapter<DonorsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DonorsViewHolder {
 
@@ -18,7 +19,7 @@ class DonorsAdapter(val items:ArrayList<String>):RecyclerView.Adapter<DonorsView
     override fun onBindViewHolder(holder: DonorsViewHolder, position: Int) {
 
         val currentItem = items[position]
-        holder.donorsText.text = currentItem
+        holder.donorsText.text = currentItem.displayName
     }
 
     override fun getItemCount(): Int {
